@@ -14,7 +14,7 @@ function Details() {
 if(!uni) return <h2>Loading...</h2>;
 
 return (
-    <div>
+    <div className="details-page">
         <h1>{uni.name}</h1>
         <p> {uni.country}</p>
         <a href={uni.web_pages[0]}>Visit Website</a>

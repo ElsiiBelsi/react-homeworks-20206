@@ -1,16 +1,18 @@
-import {useNavigation} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function card ({item}) {
-    const navigation = useNavigation();
+function Card({ item }) {
+    const navigate = useNavigate();
 
     return (
-        <div style={{border: "1px solid black", margin: "10px", padding: "10px"}}>
-            <h3>{item.name}</h3>
-            <button 
-            onClick={(
-            ) => navigate ("/details/" + item.name)}>Details</button>
+        <div className="card">
+     
+            <h3 className="title">{item.name}</h3>
+            <p className="country">{item.country}</p>
+            <button className="details-btn" onClick={() => navigate("/details/" + item.name)}>
+                Details
+            </button>
         </div>
     );
 }
 
-export default card;
+export default Card;

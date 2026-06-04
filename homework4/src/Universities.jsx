@@ -1,12 +1,13 @@
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
-import Card from "../components/Card";
+import Card from "./Card";
+
 
 function Universities() {
     const {country} = useParams();
-    const {data, setData} = useState([]);
-    const {loading, setLoading} = useState(true);
-    const {error, setError} = useState(false);
+   const [data, setData] = useState([]);
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState(false);
 
     useEffect(() => {
         setLoading(true);
@@ -28,9 +29,12 @@ function Universities() {
     return (
         <div>
             <h2>{country} Universities</h2>
+            
+            <div className="card-container">
             {data.map((item, index) => (
                 <Card key={index} item={item} />
             ))}
+        </div>
         </div>
             );
 }
